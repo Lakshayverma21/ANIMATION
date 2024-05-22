@@ -1,0 +1,405 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: consolas;
+}
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #ededed;
+}
+
+.road
+{
+    position: relative;
+    width: 1030px;
+    height: 230px;
+    background: #333;
+    border-radius: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.road::before
+{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg ,#fff ,#fff 60% ,transparent 50%);
+    background-size: 50px;
+    animation: animate_road 0.125s linear infinite;
+
+}
+
+@keyframes animate_road {
+    0% {
+        background-position: 60px;
+    }
+    100% {
+        background-position: 0;
+    }
+}
+
+.taxi
+{
+    position: absolute;
+    left: 355px;
+    width: 300px;
+    height: 130px;
+    background: #f4b603;
+    border-radius: 20px;
+    box-shadow: -20px 15px rgba(0,0,0,0.30);
+    animation: animate_taxi 2s linear infinite;
+}
+
+.taxi::before
+{
+    content: '';
+    position: absolute;
+    top: 14.5px;
+    left: 5px;
+    width: 10px;
+    height: 26px;
+    border-radius: 80px;
+    background: #fc3c25;
+    box-shadow: 0 70px #fc3c25;
+}
+
+.taxi::after
+{
+    content: '';
+    position: absolute;
+    top: 14.5px;
+    right: 5px;
+    width: 10px;
+    height: 26px;
+    border-radius: 80px;
+    background: #fff;
+    box-shadow: 0 70px #fff;
+}
+
+.taxi span
+{
+    position: absolute;
+    inset: 2.5px 17px;
+    background: #fdd206;
+    border-radius: 10px;
+}
+
+.taxi span::before
+{
+    content: 'Taxi';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(90deg);
+    background: #fff;
+    padding: 3px;
+    font-size: 0.90em;
+    font-weight: 950;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1.5px #0005;
+    z-index: 10;
+}
+
+.taxi span b
+{
+    position: absolute;
+    inset: 0 21px;
+    background: #111;
+    border-radius: 30px;
+}
+
+.taxi span b::before
+{
+    content: '';
+    position: absolute;
+    inset: 15px 50px;
+    background: #fdd206;
+    border-radius: 10px;
+}
+
+.taxi span b::after
+{
+    content: '';
+    position: absolute;
+    inset: 0px 110px;
+    background: #fdd206;
+    border-radius: 10px;
+}
+
+.taxi span i
+{
+    position: absolute;
+    inset: 0;
+}
+
+.taxi span i::before
+{
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: 35px;
+    width: 38px;
+    height: 5px;
+    background: #fdd206;
+    transform-origin: right;
+    transform: rotate(30deg);
+    border-radius: 100px;
+    box-shadow: 100px 30px #fdd206;
+}
+
+.taxi span i::after
+{
+    content: '';
+    position: absolute;
+    top: 103px;
+    left: 37px;
+    width: 38px;
+    height: 5px;
+    background: #fdd206;
+    transform-origin: right;
+    transform: rotate(-30deg);
+    border-radius: 100px;
+    box-shadow: 100px -30px #fdd206;
+}
+
+.horizontal-line-upper
+{
+    position: absolute;
+    left: 205px;
+    top: 10px;
+    width: 40px;
+    height: 5px;
+    background-color: #fdd206;
+    border-radius: 50px;
+    transform: rotate(-30deg);
+}
+
+.horizontal-line-lower
+{
+    position: absolute;
+    left: 205px;
+    top: 115px;
+    width: 40px;
+    height: 5px;
+    background-color: #fdd206;
+    border-radius: 50px;
+    transform: rotate(30deg);
+}
+
+@keyframes animate_taxi
+{
+    0%
+    {
+        transform: translateX(20px) translateY(-20px);
+    }
+    25%
+    {
+        transform: translateX(-10px) translateY(0px);
+    }
+    50%
+    {
+        transform: translateX(20px) translateY(-20px);
+    }
+    75%
+    {
+        transform: translateX(-10px) translateY(0px);
+    }
+    100%
+    {
+        transform: translateX(20px) translateY(-20px);
+    }
+}
+/* 
+*: This line talks about everything on the webpage. It's like saying "Hey, I'm talking about all the elements here!"
+margin: 0; padding: 0;: It's like telling every element, "Don't leave any space around yourself, and don't put any padding inside you."
+box-sizing: border-box;: Imagine each element is like a box. This line makes sure that when you add padding or borders to the box, it doesn't make the box bigger. It keeps the box the same size.
+font-family: consolas;: This line is about the text style. It says, "Hey, let's use the Consolas font for all the text on our webpage. Consolas is like a special font that's easy to read, especially for code."
+*/
+
+/*
+body: Now, we're talking specifically about the body of the webpage, like the main part.
+display: flex;: It's like saying, "Let's organize the stuff inside the body in a flexible way."
+justify-content: center;: This one says, "Make sure everything inside the body is centered horizontally."
+align-items: center;: And this one says, "Also, center everything vertically."
+min-height: 100vh;: It's like saying, "Let's make sure the body is at least as tall as the whole screen, no matter how small or big the screen is."
+background: #ededed;: This just gives the body a light gray background color.
+*/
+
+/*
+.road: This is a selector that targets elements with the class "road". So, any HTML element with class="road" will be affected by these styles.
+position: relative;: This means that the element's position is relative to its normal position on the webpage. It's like saying, "Stay where you are, but I might do some positioning tricks later."
+width: 900px;: This sets the width of the .road element to 700 pixels. So, it will be 700 pixels wide on the webpage.
+height: 200px;: This sets the height of the .road element to 150 pixels. So, it will be 150 pixels tall on the webpage.
+background: #333;: This sets the background color of the .road element to a dark gray color (#333).
+border-radius: 75px;: This creates rounded corners for the .road element. The radius of each corner is set to 75 pixels, so it will have a smooth, rounded appearance.
+display: flex;: This sets up a flexible layout inside the .road element. It's like saying, "Hey, let's arrange the stuff inside you flexibly."
+justify-content: center;: This centers the content horizontally inside the .road element. It's like saying, "Make sure everything inside you is centered from left to right."
+align-items: center;: This centers the content vertically inside the .road element. It's like saying, "Also, make sure everything inside you is centered from top to bottom."
+*/
+
+/*
+.road::before: This code applies styles to an invisible element that appears before every element with the class "road" on the webpage.
+content: '';: This line adds nothing as content to the invisible element. It's just a way to make the element show up.
+position: absolute;: This positions the invisible element precisely where we want it, regardless of where the "road" element is located.
+width: 100%; height: 4px;: This makes the invisible element stretch across the entire width of its container (the "road" element) and gives it a height of 4 pixels, making it a thin horizontal line.
+background: Here, we're painting this thin line to look like dashed road markings. The linear-gradient creates a smooth transition from white to transparent, making it look like dashes.
+linear-gradient: This is a function that creates a gradient effect for the background.
+(90deg): This sets the direction of the gradient to 90 degrees, which means it goes from top to bottom.
+#fff: This is the color of the gradient at the start, which is white.
+#fff 60%: This means that the white color extends for the first 50% of the gradient.
+transparent 50%: This means that the color becomes transparent for the next 50% of the gradient.
+background-size: 50px;: This controls the size of the dashes. Each dash will be 50 pixels long.
+animation: This makes the dashed line appear to move. It's like the dashes are scrolling along the road. The animate_road animation does this scrolling effect.
+*/
+
+/*
+This line of CSS is like giving instructions on how to use the animation we defined earlier (animate_road). Here's a simple explanation:
+animation: This property is like saying, "Hey, let's apply an animation to this element."
+animate_road: This is the name of the animation we defined earlier. It's like saying, "Use the animate_road animation."
+0.125s: This is how long each cycle of the animation should take. It's like saying, "Make each loop last for 0.125 seconds."
+linear: This defines how the animation progresses over time. In this case, it means the animation will proceed at a constant speed, like a steady pace.
+infinite: This means the animation should repeat forever. It's like saying, "Keep looping this animation indefinitely."
+*/
+
+/*
+@keyframes: This is like a container where we define how an animation changes over time.
+animate_road: This is the name we give to our animation. It's like naming a recipe.
+0% and 100%: These represent the starting and ending points of the animation.
+background-position: 50px;: At the beginning (0%) of the animation, we're saying that the background should start 60 pixels to the right. This will make it look like the road is moving from right to left.
+background-position: 0;: At the end (100%) of the animation, we're saying the background should go back to its original position, which is at the very left.
+*/
+
+/*
+.taxi: This is a selector for elements with the class "taxi". So, any HTML element with class="taxi" will be affected by these styles.
+position: absolute;: This positions the element absolutely, meaning it's positioned relative to its nearest positioned ancestor (in this case, probably the nearest ancestor that is not static).
+left: 355px;: This sets the distance between the left edge of the element and the left edge of its containing block to 355 pixels.
+width: 225px;: This sets the width of the element to 225 pixels.
+height: 125px;: This sets the height of the element to 125 pixels.
+background: #f4b603;: This sets the background color of the element to a shade of yellow (#f4b603).
+border-radius: 20px;: This adds rounded corners to the element, with a border radius of 20 pixels.
+box-shadow: -20px 15px rgba(0,0,0,0.30);: This adds a shadow effect to the element. It's positioned 20 pixels to the left and 15 pixels down from the element, and it's a somewhat transparent black color with 30% opacity.
+*/
+
+/*
+This line adds a shadow effect to an element. Here's what each part does:
+-10px 10px: These values determine the horizontal and vertical offsets of the shadow. In this case, it means the shadow will be positioned 10 pixels to the left and 10 pixels down from the element.
+rgba(0,0,0,0.25): This specifies the color and transparency of the shadow. The first three values (0, 0, 0) represent the color in RGB format (black in this case), and the last value (0.25) represents the transparency or opacity of the shadow. Here, the shadow will be black with 25% opacity, meaning it will be somewhat transparent.
+*/
+
+/*
+taxi::before: This targets a pseudo-element that appears before the content of elements with the class "taxi". It's like adding something before the main element.
+content: '': This line adds empty content to the pseudo-element. It's needed to make the pseudo-element visible.
+position: absolute;: This positions the pseudo-element absolutely within its nearest positioned ancestor, which is likely the .taxi element.
+top: 14.5px; left: 11px;: These lines position the pseudo-element 14.5 pixels down and 11 pixels to the right from the top-left corner of the .taxi element.
+width: 10px; height: 26px;: These lines set the dimensions of the pseudo-element to 10 pixels wide and 26 pixels tall.
+border-radius: 80px;: This line rounds the corners of the pseudo-element, giving it a circular appearance.
+background: #fc3c25;: This sets the background color of the pseudo-element to a shade of red (#fc3c25).
+box-shadow: 0 70px #fc3c25;: This adds a shadow to the pseudo-element. It's positioned directly below it, 70 pixels down, and it's also red.
+*/
+
+/*
+0: This means there's no shadow offset horizontally. The shadow will be directly behind the element, not to the left or right.
+70px: This means the shadow is 70 pixels below the element. So, the shadow will appear 70 pixels lower than the element itself.
+#fc3c25: This is the color of the shadow. It's a shade of red, specifically represented by the hexadecimal color code #fc3c25.
+*/
+
+/*
+content: 'Taxi';: Sets the content of the pseudo-element to the text "Taxi".
+position: absolute;: Positions the pseudo-element absolutely within its containing element.
+top: 50%; left: 50%;: Positions the pseudo-element at the center of its containing element.
+transform: translate(-50%,-50%) rotate(90deg);: Translates the pseudo-element 50% left and 50% up from its original position, and then rotates it 90 degrees clockwise.
+background: #fff;: Sets the background color of the pseudo-element to white.
+padding: 3px;: Adds 3 pixels of padding around the content of the pseudo-element.
+font-size: 0.90em;: Sets the font size to 0.90 times the size of the parent element's font.
+font-weight: 950;: Sets the font weight to 950, which is quite heavy.
+text-transform: uppercase;: Transforms the text to uppercase.
+letter-spacing: 0.1em;: Adds a letter spacing of 0.1 times the size of the font.
+border-radius: 2px;: Rounds the corners of the pseudo-element by 2 pixels.
+box-shadow: 0 0 0 1.5px #0005;: Adds a box shadow with a slight blur effect and color #0005 (likely a semi-transparent black) around the pseudo-element.
+z-index: 10;: Sets the stacking order of the pseudo-element to 10, ensuring it appears above other elements with lower z-index values.
+*/
+
+/*
+The transform property in CSS is used to apply transformations to elements. In this case, transform: translate(-50%,-50%) rotate(90deg); applies two transformations:
+translate(-50%, -50%): This translates the element 50% of its width to the left and 50% of its height upwards. This effectively centers the element within its containing element.
+rotate(90deg): This rotates the element by 90 degrees clockwise. This rotation is applied after the translation, so the rotation occurs around the center of the element after it has been centered.
+*/
+
+/*
+Here's the breakdown of the values used in box-shadow: 0 0 0 1.5px #0005;:
+0: This represents the horizontal offset of the shadow. In this case, it's set to 0, meaning the shadow will be directly behind the element with no horizontal displacement.
+0: This represents the vertical offset of the shadow. It's also set to 0, meaning the shadow will be directly behind the element with no vertical displacement.
+0: This represents the blur radius of the shadow. It's set to 0, meaning the shadow will have no blur effect.
+1.5px: This represents the spread radius of the shadow. It's set to 1.5 pixels, which determines how much the shadow should expand or contract. In this case, it's adding a slight expansion to the shadow.
+#0005: This is the color of the shadow. It's set to a black color with an alpha value of 0.05, making it semi-transparent. The alpha value ranges from 0 (fully transparent) to 1 (fully opaque), so #0005 is nearly transparent black.
+*/
+
+/*
+The z-index property in CSS is used to control the stacking order of positioned elements. Elements with a higher z-index value are stacked above elements with lower z-index values.
+In this case, z-index: 10; sets the stacking order of the element to 10. This means that the element will appear above elements with a lower z-index value or with no z-index specified.
+Setting a z-index value of 10 suggests that this element should be visually layered above most other elements on the page, as long as they don't have higher z-index values.
+*/
+
+/*
+content: '': This property inserts empty content into the pseudo-element. This is often used when you want to create visual effects with pseudo-elements.
+position: absolute;: This property positions the pseudo-element absolutely within its containing element, which means it's positioned relative to the nearest positioned ancestor (or the initial containing block if none are positioned).
+inset: 15px 50px;: This shorthand property sets the top and left positions of the pseudo-element. It's a newer CSS property that combines top, right, bottom, and left properties into one. In this case, 15px represents the top position and 50px represents the left position.
+background: #fdd206;: This property sets the background color of the pseudo-element to a shade of yellow (#fdd206).
+border-radius: 10px;: This property rounds the corners of the pseudo-element to create rounded corners. In this case, it sets a border-radius of 10px.
+*/
+
+/*
+What it Targets: This CSS code is like a set of instructions for web browsers. It tells the browser to find all the <span> elements that have a class name of "taxi".
+What it Does: Inside those <span> elements, if the browser sees an <i> element (usually used for italicizing text), it will apply some special styling.
+How it Styles the <i> Elements: It tells the browser to position those <i> elements in a specific way:
+position: absolute;: This means the browser will position the <i> elements absolutely, which usually means they won't affect the layout of the page.
+inset: 0;: This is a shorthand way of saying "position the <i> elements so that they touch the edges of their container perfectly". It makes the <i> elements stick to the top-left corner of their parent <span> elements.
+*/
+
+/*
+What it Targets: This CSS code is for creating a visual effect for the ::before pseudo-element of <i> elements that are within <span> elements with the class .taxi.
+What it Does: It creates a shape that appears before the content of the <i> element.
+How it Styles the Pseudo-element (::before):
+content: '';: This property inserts empty content into the pseudo-element.
+position: absolute;: It positions the pseudo-element absolutely, meaning it's positioned relative to its containing element.
+top: 18px; and left: 35px;: These properties set the position of the pseudo-element from the top and left edges of its containing element.
+width: 38px; and height: 5px;: These properties determine the size of the pseudo-element.
+background: #fdd206;: This sets the background color of the pseudo-element to a shade of yellow.
+transform-origin: right; and transform: rotate(30deg);: These properties rotate the pseudo-element by 30 degrees around its right side.
+border-radius: 100px;: This rounds the corners of the pseudo-element, creating a circular shape.
+box-shadow: 100px 30px #fdd206;: This adds a shadow effect to the pseudo-element.
+*/
+
+/*
+What it Targets: This CSS code targets the ::after pseudo-element of <i> elements within <span> elements that have the class .taxi.
+What it Does: It creates another visual effect after the content of the <i> element.
+How it Styles the Pseudo-element (::after):
+content: '';: This property inserts empty content into the pseudo-element.
+position: absolute;: It positions the pseudo-element absolutely, meaning it's positioned relative to its containing element.
+top: 102px; and left: 35px;: These properties set the position of the pseudo-element from the top and left edges of its containing element.
+width: 38px; and height: 5px;: These properties determine the size of the pseudo-element.
+background: #fdd206;: This sets the background color of the pseudo-element to a shade of yellow.
+transform-origin: right; and transform: rotate(-30deg);: These properties rotate the pseudo-element by -30 degrees around its right side, effectively rotating it in the opposite direction of the previous pseudo-element.
+border-radius: 100px;: This rounds the corners of the pseudo-element, creating a circular shape.
+box-shadow: 100px -30px #fdd206;: This adds a shadow effect to the pseudo-element, but this time with a negative offset for the y-axis, resulting in the shadow appearing above the element.
+*/
+
+/*
+Keyframes: Think of keyframes as snapshots of the animation at different points in time. In this case, we have keyframes at 0%, 25%, 50%, 75%, and 100% of the total animation time.
+Transform Property: This property allows us to change the position, size, and rotation of an element. In our case, we're using the transform property to move the taxi.
+translateX() and translateY(): These functions tell the browser how much to move the taxi horizontally (translateX()) and vertically (translateY()).
+Values: At each keyframe, we specify how much to move the taxi using translateX() and translateY(). For example, at 0%, we move the taxi 20 pixels to the right and 20 pixels up.
+Animation Loop: The animation loops from 0% to 100%, creating a smooth motion. At each step, the taxi moves according to the specified values.
+*/
